@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider } from './context/AuthContext.jsx';
 import ErrorBoundary from './components/ErrorBoundary';
 import App from './App.jsx';
-import GlobalStyle from './styles/GlobalStyle';
+import GlobalStyle from './styles/GlobalStyle.jsx';
 import theme from './styles/theme';
 
 console.log('🚀 App starting...');
