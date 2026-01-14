@@ -19,6 +19,42 @@ const Home = () => {
   const [featuredProjects, setFeaturedProjects] = useState([]);
   const [services, setServices] = useState([]);
 
+  // Fallback sample projects
+  const sampleProjects = [
+    {
+      _id: '1',
+      title: 'Modern Living Room',
+      description: 'Contemporary living space with elegant furnishings',
+      image: 'https://images.unsplash.com/photo-1565183938294-7563f3ff68c5?w=500&h=400&fit=crop',
+      featured: true,
+      category: 'Living Room'
+    },
+    {
+      _id: '2',
+      title: 'Luxury Master Bedroom',
+      description: 'Sophisticated bedroom design with premium materials',
+      image: 'https://images.unsplash.com/photo-1540932239986-310128078f3c?w=500&h=400&fit=crop',
+      featured: true,
+      category: 'Bedroom'
+    },
+    {
+      _id: '3',
+      title: 'Kitchen Renovation',
+      description: 'Modern kitchen with state-of-the-art appliances',
+      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&h=400&fit=crop',
+      featured: true,
+      category: 'Kitchen'
+    }
+  ];
+
+  // Fallback sample services
+  const sampleServices = [
+    { _id: '1', title: 'Interior Design', description: 'Custom designs tailored to your style' },
+    { _id: '2', title: 'Space Planning', description: 'Optimize your space for comfort and function' },
+    { _id: '3', title: 'Color Consultation', description: 'Expert color schemes for any room' },
+    { _id: '4', title: 'Furniture Selection', description: 'Curated furniture for your home' }
+  ];
+
   useEffect(() => {
     fetchFeaturedProjects();
     fetchServices();
@@ -29,7 +65,8 @@ const Home = () => {
       const response = await axios.get('/api/projects?featured=true');
       setFeaturedProjects(response.data.slice(0, 3));
     } catch (error) {
-      console.error('Error fetching projects:', error);
+      console.warn('Using sample projects (API unavailable)');
+      setFeaturedProjects(sampleProjects);
     }
   };
 
@@ -38,7 +75,8 @@ const Home = () => {
       const response = await axios.get('/api/services');
       setServices(response.data.slice(0, 4));
     } catch (error) {
-      console.error('Error fetching services:', error);
+      console.warn('Using sample services (API unavailable)');
+      setServices(sampleServices);
     }
   };
 
