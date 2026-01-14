@@ -1,0 +1,63 @@
+const theme = {
+  colors: {
+    primary: '#667eea',
+    secondary: '#764ba2',
+    accent: '#f5576c',
+    text: '#1f2937',
+    textLight: '#6b7280',
+    textLighter: '#9ca3af',
+    background: '#ffffff',
+    light: '#f9fafb',
+    dark: '#111827',
+    success: '#10b981',
+    error: '#ef4444',
+    warning: '#f59e0b',
+    info: '#3b82f6',
+  },
+  gradients: {
+    primary: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    secondary: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    accent: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    dark: 'linear-gradient(135deg, #1f2937 0%, #111827 100%)',
+  },
+  shadows: {
+    sm: '0 2px 4px rgba(0, 0, 0, 0.05)',
+    md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+    lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+    xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+    '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+    inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+    colored: '0 10px 30px rgba(102, 126, 234, 0.3)',
+  },
+  borderRadius: {
+    sm: '0.375rem',
+    md: '0.5rem',
+    lg: '0.75rem',
+    xl: '1rem',
+    '2xl': '1.5rem',
+    full: '9999px',
+  },
+  spacing: {
+    xs: '0.5rem',
+    sm: '0.75rem',
+    md: '1rem',
+    lg: '1.5rem',
+    xl: '2rem',
+    '2xl': '3rem',
+    '3xl': '4rem',
+  },
+  breakpoints: {
+    sm: '640px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1280px',
+    '2xl': '1536px',
+  },
+  transitions: {
+    fast: '0.15s cubic-bezier(0.4, 0, 0.2, 1)',
+    base: '0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    slow: '0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+  },
+};
+
+export default theme;
