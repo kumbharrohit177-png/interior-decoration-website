@@ -35,8 +35,11 @@ services:
         # Admin email address
 
   # Frontend Static Site
-  - type: static
+  - type: web
     name: interior-design-frontend
+    env: static
+    region: oregon
+    plan: free
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: ./frontend/dist
     envVars:
