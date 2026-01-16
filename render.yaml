@@ -18,12 +18,12 @@ services:
         sync: false
       - key: FRONTEND_ORIGIN
         sync: false
-  - type: static_site
+  - type: static
     name: interior-frontend
     plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
-    staticPublishPath: dist
+    publishPath: dist
     autoDeploy: true
     envVars:
       - key: VITE_API_URL
