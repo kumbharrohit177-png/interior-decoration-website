@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import axios from 'axios';
+import api from '../lib/api';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
 const Contact = () => {
@@ -28,7 +28,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      await axios.post('/api/contact', formData);
+      await api.post('/contact', formData);
       setSubmitStatus('success');
       setFormData({
         name: '',

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import axios from 'axios';
+import api from '../lib/api';
 
 // Components
 import Hero from '../components/Hero.jsx';
@@ -62,7 +62,7 @@ const Home = () => {
 
   const fetchFeaturedProjects = async () => {
     try {
-      const response = await axios.get('/api/projects?featured=true');
+      const response = await api.get('/projects?featured=true');
       setFeaturedProjects(response.data.slice(0, 3));
     } catch (error) {
       console.warn('Using sample projects (API unavailable)');
@@ -72,7 +72,7 @@ const Home = () => {
 
   const fetchServices = async () => {
     try {
-      const response = await axios.get('/api/services');
+      const response = await api.get('/services');
       setServices(response.data.slice(0, 4));
     } catch (error) {
       console.warn('Using sample services (API unavailable)');

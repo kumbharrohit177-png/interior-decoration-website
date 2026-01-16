@@ -7,7 +7,12 @@ const path = require('path');
 const app = express();
 
 // Middleware
-app.use(cors());
+const allowedOrigin = process.env.FRONTEND_ORIGIN;
+if (allowedOrigin) {
+  app.use(cors({ origin: allowedOrigin }));
+} else {
+  app.use(cors());
+}
 app.use(express.json());
 
 // Serve static files (avatars)
